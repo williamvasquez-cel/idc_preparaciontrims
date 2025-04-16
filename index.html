@@ -2,33 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Rotador Power BI</title>
+  <title>Dashboard Rotativo</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
+    html, body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-      font-size: 1.5em;
+      padding: 0;
+      height: 100%;
+      width: 100%;
     }
     iframe {
-      display: block;
       width: 100%;
-      height: calc(100vh - 60px);
+      height: 100%;
       border: none;
     }
   </style>
 </head>
 <body>
-  <header>Dashboard Rotativo - Power BI</header>
   <iframe id="iframe" src=""></iframe>
 
   <script>
@@ -47,7 +36,7 @@
     }
 
     cambiarURL(); // Carga inicial
-    setInterval(cambiarURL, 30000); // Cambia cada 30 segundos
+    setInterval(cambiarURL, 30000); // Cada 30 segundos
   </script>
 </body>
 </html>
