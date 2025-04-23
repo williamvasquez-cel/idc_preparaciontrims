@@ -35,8 +35,13 @@
       index = (index + 1) % urls.length;
     }
 
-    cambiarURL(); // Carga inicial
-    setInterval(cambiarURL, 30000); // Cada 30 segundos
+    function refrescarIframe() {
+      iframe.src = iframe.src; // Recarga el mismo dashboard activo
+    }
+
+    cambiarURL(); // Primera carga
+    setInterval(cambiarURL, 30000);         // Cambia de dashboard cada 30 segundos
+    setInterval(refrescarIframe, 5 * 60 * 1000); // Recarga el iframe cada 5 minutos
   </script>
 </body>
 </html>
