@@ -11,20 +11,14 @@
       width: 100%;
       background-color: #ffffff;
     }
-    .franja-blanca {
-      height: 80px;
-      width: 100%;
-      background-color: white;
-    }
     iframe {
       width: 100%;
-      height: calc(100% - 80px); /* Resta la altura de la franja blanca */
+      height: 100%;
       border: none;
     }
   </style>
 </head>
 <body>
-  <div class="franja-blanca"></div>
   <iframe id="iframe" src=""></iframe>
 
   <script>
@@ -47,7 +41,7 @@
     }
 
     cambiarURL(); // Primera carga
-    setInterval(cambiarURL, 60000);         // Cambia de dashboard cada 60 segundos
+    setInterval(cambiarURL, 60 * 1000);         // Cambia de dashboard cada 60 segundos
     setInterval(refrescarIframe, 5 * 60 * 1000); // Refresca el iframe cada 5 minutos
   </script>
 </body>
