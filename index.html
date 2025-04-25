@@ -2,22 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Indicadores Preparación Trims</title>
+  <title>Dashboard Rotativo</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
+      background-color: #ffffff;
+    }
+    .franja-blanca {
+      height: 40px;
+      width: 100%;
+      background-color: white;
     }
     iframe {
       width: 100%;
-      height: 100%;
+      height: calc(100% - 40px); /* Resta la altura de la franja blanca */
       border: none;
     }
   </style>
 </head>
 <body>
+  <div class="franja-blanca"></div>
   <iframe id="iframe" src=""></iframe>
 
   <script>
@@ -36,12 +43,12 @@
     }
 
     function refrescarIframe() {
-      iframe.src = iframe.src; // Recarga el mismo dashboard activo
+      iframe.src = iframe.src;
     }
 
     cambiarURL(); // Primera carga
     setInterval(cambiarURL, 30000);         // Cambia de dashboard cada 30 segundos
-    setInterval(refrescarIframe, 5 * 60 * 1000); // Recarga el iframe cada 5 minutos
+    setInterval(refrescarIframe, 5 * 60 * 1000); // Refresca el iframe cada 5 minutos
   </script>
 </body>
 </html>
