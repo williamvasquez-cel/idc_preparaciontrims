@@ -9,13 +9,22 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      overflow: hidden;
       background-color: #ffffff;
+      overflow: hidden;
     }
 
-    #iframe {
+    .contenedor-iframe {
+      position: relative;
       width: 100%;
       height: 100%;
+      padding-top: 60px; /* Baja el iframe para centrar visualmente */
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100% - 60px);
       border: none;
     }
 
@@ -23,7 +32,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 60px; /* Más alto para cubrir scroll y pie de Power BI */
+      height: 90px;
       width: 100%;
       background-color: white;
       z-index: 1000;
@@ -31,8 +40,10 @@
   </style>
 </head>
 <body>
-  <iframe id="iframe" src=""></iframe>
-  <div class="fondo-blanco-inferior"></div>
+  <div class="contenedor-iframe">
+    <iframe id="iframe" src=""></iframe>
+    <div class="fondo-blanco-inferior"></div>
+  </div>
 
   <script>
     const urls = [
@@ -53,9 +64,9 @@
       iframe.src = iframe.src;
     }
 
-    cambiarURL(); // Primera carga
-    setInterval(cambiarURL, 60 * 1000);         // Cambia de dashboard cada 60 segundos
-    setInterval(refrescarIframe, 5 * 60 * 1000); // Refresca el iframe cada 5 minutos
+    cambiarURL();
+    setInterval(cambiarURL, 60 * 1000);
+    setInterval(refrescarIframe, 5 * 60 * 1000);
   </script>
 </body>
 </html>
